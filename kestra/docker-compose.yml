@@ -40,7 +40,7 @@ services:
             basic-auth:
               enabled: false
               username: "admin@kestra.io" # it must be a valid email address
-              password: kestra
+              password: kestra-demo
           repository:
             type: postgres
           storage:
