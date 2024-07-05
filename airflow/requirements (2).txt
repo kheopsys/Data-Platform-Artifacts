@@ -1,0 +1,6 @@
+apache-airflow-providers-cncf-kubernetes
+apache-airflow-providers-apache-spark
+apache-airflow-providers-airbyte[http] 
+apache-airflow-providers-airbyte
+psycopg2-binary
+dbt-postgres
