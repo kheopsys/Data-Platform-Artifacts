@@ -32,12 +32,12 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
 USER root
-
+#wget https://downloads.apache.org/spark/spark-3.5.2/spark-3.5.2-bin-hadoop3.tgz \
 # Téléchargement et installation de Spark
-RUN wget https://downloads.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz \
-    && tar xvf spark-3.5.1-bin-hadoop3.tgz \
-    && mv spark-3.5.1-bin-hadoop3 /opt/spark \
-    && rm spark-3.5.1-bin-hadoop3.tgz
+RUN wget https://archive.apache.org/dist/spark/spark-3.5.2/spark-3.5.2-bin-hadoop3.tgz \
+    && tar xvf spark-3.5.2-bin-hadoop3.tgz \
+    && mv spark-3.5.2-bin-hadoop3 /opt/spark \
+    && rm spark-3.5.2-bin-hadoop3.tgz
 
 
 # Définition des variables d'environnement pour Spark
