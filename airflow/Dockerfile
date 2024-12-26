@@ -1,4 +1,4 @@
-FROM apache/airflow:2.9.1
+FROM apache/airflow:2.10.4
 
 USER root
 
@@ -32,12 +32,12 @@ COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
 USER root
-#wget https://downloads.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz \
+
 # Téléchargement et installation de Spark
-RUN wget https://archive.apache.org/dist/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz \
-    && tar xvf spark-3.5.3-bin-hadoop3.tgz \
-    && mv spark-3.5.3-bin-hadoop3 /opt/spark \
-    && rm spark-3.5.3-bin-hadoop3.tgz
+RUN wget https://downloads.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz \
+    && tar xvf spark-3.5.4-bin-hadoop3.tgz \
+    && mv spark-3.5.4-bin-hadoop3 /opt/spark \
+    && rm spark-3.5.4-bin-hadoop3.tgz
 
 
 # Définition des variables d'environnement pour Spark
