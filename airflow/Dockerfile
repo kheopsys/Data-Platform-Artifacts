@@ -33,21 +33,8 @@ RUN pip install --no-cache-dir -r /requirements.txt
 
 USER root
 
-# Téléchargement et installation de Spark
-#RUN wget https://downloads.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz \
-#    && tar xvf spark-3.5.4-bin-hadoop3.tgz \
-#    && mv spark-3.5.4-bin-hadoop3 /opt/spark \
-#    && rm spark-3.5.4-bin-hadoop3.tgz
-#
-
-# Définition des variables d'environnement pour Spark
-#ENV SPARK_HOME=/opt/spark
-#ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-
 RUN  mkdir -p /airflow/dags /airflow/logs /airflow/plugins /airflow/config
 
 USER airflow
 
-# Installation de PySpark
-RUN pip install pyspark
 RUN echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
